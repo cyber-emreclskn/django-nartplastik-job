@@ -1,0 +1,36 @@
+.gradient-box{
+    position: relative;
+    width: 100%;
+    background-image: linear-gradient(to right, #667eea, #a459dc);
+    box-shadow: 0 4px 15px 0 rgba(102, 126, 228, 0.75);
+    background-size: 100% 200%;
+    border-radius: .5rem;
+    padding: 1rem;
+    transition: all .2s;
+    margin: .8rem 0;
+}
+.gradient-box .icon{
+    position: relative;
+    width: 100%;
+    margin: .5rem 0;
+    text-align: center;
+}
+.gradient-box .icon i{
+    font-size: 5rem;
+    color: transparent;
+    -webkit-text-stroke: 1px #fff;
+}
+.gradient-box h2{
+    font-size: var(--h2-font-size);
+    color:#fff;
+}
+.gradient-box p{
+    font-size: var(--small-font-size);
+    color:#fff;
+    font-weight: lighter;
+}
+.gradient-box:hover{
+    background-size: 150% 40%;
+    transform: scale(1.03);
+    box-shadow: 0 7px 25px 0 rgba(102, 126, 228, 0.75);
+}

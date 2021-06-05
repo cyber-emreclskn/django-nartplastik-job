@@ -1,0 +1,32 @@
+.search-area{
+    position: relative;
+    width: 100%;
+    padding: 0 .7rem;
+}
+.search-button{
+    box-shadow: var(--box-shadow);
+    background: #fff;
+    border-radius: .5rem;
+}
+.search-button .icon{
+    text-align: center;
+}
+.search-button .icon button{
+    font-size: var(--h3-font-size);
+    border:none;
+    outline: none;
+    background: transparent;
+    color:#000;
+    cursor: pointer;
+    transition: all .1s;
+}
+.search-button .icon button:active{
+    transform: scale(.7);
+}
+.search-button input{
+    position: relative;
+    width: 100%;
+    outline: none;
+    padding: .1rem 0;
+    border:none;
+}

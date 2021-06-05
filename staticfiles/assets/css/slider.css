@@ -1,0 +1,188 @@
+.slider-area{
+    height: 500px;
+    overflow:hidden;
+    position: relative;
+}
+.slider-area .slide{
+    position: absolute;
+    left:0;
+    top:0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    display:none;
+    padding:0 15px;
+    animation: slide 2s ease;
+}
+.slider-area .slide:before{
+    content: "";
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top:0;
+    background: rgba(0, 0, 0, 0.30);
+    position: absolute;
+}
+.slider-area .slide.active{
+    display: flex;
+}
+@keyframes slide{
+    0%{
+        transform:scale(1.1);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+.slide-container{
+    max-width: 1170px;
+    margin:auto;
+    justify-content: center;
+}
+.slider-area .slide-container{
+    flex-grow: 1;
+}
+.slider-area .caption{
+    width:50%;
+    margin: 0 0 0 2rem;
+    padding: 20px;
+    border-radius: 40px;
+    animation: captionText 3s ease forwards;
+}
+.slider-area .caption h1{
+    font-size:42px;
+    color:#fff;
+    margin:0;
+}
+.slider-area .slide.active .caption h1{
+    opacity:0;
+    animation: captionText .5s ease forwards;
+    animation-delay:1s;
+    font-size: var(--h1-font-size);
+    font-weight: 600;
+    color: #fff;
+}
+.slider-area .caption p{
+    font-size: var(--normal-font-size);
+    margin:15px 0 30px;
+    color:#fff;
+}
+.slider-area .slide.active .caption p{
+    opacity:0;
+    animation: captionText .5s ease forwards;
+    animation-delay:1.2s;
+}
+.slider-area .caption a{
+    display: inline-block;
+    padding:.6rem 1.2rem;
+    font-size: var(--normal-font-size);
+    text-decoration: none;
+    background: transparent;
+    color:#fff;
+    border:2px solid #fff;
+    border-radius: .6rem;
+    transition: all .3s;
+}
+.slider-area .caption a:hover{
+    background: #fff;
+    color:var(--text-color);
+}
+.slider-area .slide.active .caption a{
+    opacity:0;
+    animation: captionText .5s ease forwards;
+    animation-delay:1.4s;
+}
+@keyframes captionText{
+    0%{
+        opacity:0; transform: translateX(-100px);
+    }
+    100%{
+        opacity:1; transform: translateX(0px);
+    }
+}
+.slider-area .controls .prev,
+.slider-area .controls .next{
+    position: absolute;
+    z-index:2;
+    top:20px;
+    height:100%;
+    width: 50px;
+    margin-top: -20px;
+    color:#ffffff;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 40px;
+    font-size:20px;
+    cursor:pointer;
+    transition: all .5s ease;
+}
+.slider-area .controls .prev{
+    left:0;
+}
+.slider-area .controls .next{
+    right:0;
+}
+.slider-area .indicator{
+    position: absolute;
+    left:50%;
+    bottom:10px;
+    z-index: 2;
+    transform: translateX(-50%);
+}
+.slider-area .indicator div{
+    display: inline-block;
+    width:.85rem;
+    height: .85rem;
+    border-radius: 50%;
+    background-color: transparent;
+    text-align: center;
+    border: 2px solid #fff;
+    margin:0 5px;
+    cursor: pointer;
+}
+.slider-area .indicator div:hover{
+    background: rgba(0, 0, 0, 0.25);
+    transition: .2s;
+}
+.slider-area .indicator div.active{
+    background: #fff;
+    transition: .2s;
+}
+/*responsive*/
+@media(max-width: 990px){
+    .slider-area{
+        height: 400px;
+    }
+    .slider-area .caption{
+        width: 60%;
+    }
+}
+@media(max-width: 818px){
+    .slider-area{
+        height: 300px;
+    }
+    .slider-area .caption{
+        width: 80%;
+    }
+}
+@media screen and (max-width: 600px){
+    .slider-area{
+        height: 250px;
+    }
+    .slider-area .caption{
+        padding: 0;
+        width: 100%;
+        text-align: center;
+        margin-left: 0;
+    }
+    .slider-area .caption a{
+        padding: .4rem .7rem;
+        margin-top: 1rem;
+    }
+    .indicator{
+        display: none;
+    }
+}
