@@ -1,0 +1,98 @@
+{% extends 'layout.html' %}
+
+
+{% block body %}
+
+<div class="products my-4">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-12 products-categories" data-aos="zoom-in">
+                <input type="checkbox" id="products-categories">
+                <label for="products-categories"><i class="fa fa-hashtag"></i> Kategoriler</label>
+                <ul class="dropdown-list">
+
+                    <li><a class="{% if category_slug == null %}active{% endif %}"
+                            href="{% url 'page:products' %}">Tümünü Göster <span></span></a></li>
+
+                    {% if categories %}
+                    {% for category in categories %}
+                    <li><a class="{% if category_slug == category.slug %}active{% endif %}"
+                            href="{% url 'page:filter_category' category.slug %}">{{ category.categorie_name }}<span>
+                                {{ category.count }}</span></a></li>
+                    {% endfor %}
+                    {% endif %}
+                </ul>
+            </div>
+            <div class="col-lg-9 col-12">
+                <div class="row">
+                    {% if products %}
+                    {% for product in page_obj %}
+                    <div data-aos="zoom-in" class="col-md-4 col-sm-6 col-12">
+                        <div class="product-card">
+                            <a href="{% url 'page:details' product.slug %}">
+
+                                <img src="{{ product.cover_image.url }}" alt="yüklenemedi..">
+
+                                <h3>{{ product.product_name }}</h3>
+                                <p>{{ product.product_categories }}</p>
+                            </a>
+                        </div>
+                    </div>
+                    {% endfor %}
+                    {% else %}
+                    {% if keyword %}
+                    <div class="row">
+                        <div class="alert alert-danger">
+                            {{ keyword }} aramasına ait ürün bulunamadı
+                        </div>
+                    </div>
+                    {% else %}
+                    <div class="row">
+                        <div class="alert alert-danger">
+                            Henüz Ürün Yok
+                        </div>
+                    </div>
+                    {% endif %}
+                    {% endif %}
+
+                    <div class="btn" data-aos="zoom-in">
+                        <div class="pagination">
+                            <div class="step-links">
+                                <div class="btn" data-aos="zoom-in">
+                                    {% if page_obj.has_previous %}
+
+                                    <a href="?page=1" class="btn-hover color">İlk</a>
+                                    <a href="?page={{ page_obj.previous_page_number }}"
+                                        class="btn-hover color mx-1">Önceki</a>
+
+
+                                    {% endif %}
+
+
+
+                                    {% if page_obj.has_next %}
+
+                                    <a href="?page={{ page_obj.next_page_number }}" class="btn-hover color mx-1">Sonraki</a>
+                                    <a href="?page={{ page_obj.paginator.num_pages }}" class="btn-hover color">Son</a>
+
+
+                                    {% endif %}
+                                </div>
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
+                    <div class="btn" data-aos="zoom-in">
+                        {% if not page_obj.has_next %}
+                        <a class="btn-hover color">Gösterilecek Başka Ürün Yok</a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% endblock %}

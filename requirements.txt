@@ -1,0 +1,5 @@
+django_admin_list_filter_dropdown==1.0.3
+django_admin_rangefilter==0.8.1
+Django==3.1.7
+django_ckeditor==6.0.0
+django-cleanup==5.2.0

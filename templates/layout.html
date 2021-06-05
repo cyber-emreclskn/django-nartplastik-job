@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <title>Nart Ambalaj</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Style Files -->            
+    <link rel="stylesheet" href="{% static 'assets/css/custom.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/header.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/sidebar.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/slider.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/search-button.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/why_us.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/intro.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/swiper.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/categories.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/whatjob.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/footer.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/kurumsal.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/products.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/details.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/contact.css' %}"> 
+    <!-- Swiper File -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <!-- Data Aos Style File -->
+    <link href="{% static 'assets/css/data-aos.css' %}" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <script src="https://kit.fontawesome.com/ab7283eac0.js" crossorigin="anonymous"></script>
+    <!-- Favicon Logo -->
+    <link rel="shortcut icon" type="image/png" href="{% static 'images/favicon.png' %}"/>
+    <!-- Bootstrap Files -->
+    <link rel="stylesheet" href="{% static 'assets/bootstrap/css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/bootstrap/css/bootstrap-grid.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/bootstrap/css/bootstrap-reboot.css' %}">
+
+    
+</head>
+<body>
+
+    
+{% include 'includes/header.html' %}
+
+{% comment %}
+{% include 'includes/slider.html' %}
+{% include 'includes/search-button.html' %}
+{% endcomment %}
+
+
+{% block body %}
+
+{% include 'includes/about_us.html' %}
+{% include 'includes/why_us.html' %} 
+{% include 'includes/intro.html' %}
+{% include 'includes/swiper.html' %}
+{% include 'includes/categories.html' %}
+{% include 'includes/whatjob.html' %}
+
+
+{% endblock %}
+
+
+
+{% include 'includes/footer.html' %} 
+
+
+<!-- Jquery CDN File -->
+<script src="{% static 'assets/js/jquery-3.6.0.min.js' %}" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<!-- Swiper Js File -->
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<!-- Bootstrap Files -->
+<script src="{% static 'assets/bootstrap/js/bootstrap.bundle.js' %}"></script>
+<script src="{% static 'assets/bootstrap/js/bootstrap.js' %}"></script>
+<!-- JavaScript Files -->
+<script src="{% static 'assets/js/slider.js' %}"></script>
+<script src="{% static 'assets/js/data-aos.js' %}"></script>
+<script src="{% static 'assets/js/swiper.js' %}"></script>
+<script src="{% static 'assets/js/header.js' %}"></script>
+
+<script>
+    AOS.init();
+</script>
+
+</body>
+</html>

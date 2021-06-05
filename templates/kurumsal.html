@@ -1,0 +1,65 @@
+{% extends 'layout.html' %}
+<!-- {% include 'TEMPLATE.html' %} --> 
+{% block body %}
+<div class="corporate my-4">
+    <div class="container">
+        <div class="image" data-aos="zoom-in">
+            {% for page in pages %}
+            {% if page.slug == active_slug %}
+            <img src="{{ page.cover_image.url }}" alt="yüklenemedi">
+            {% endif %}
+            {% endfor %}
+            <div class="text">
+                <h2 data-value="Hakkımızda">Hakkımızda</h2>
+            </div>
+        </div>
+        <div class="content">
+            <div class="row">
+                <div class="col-12">
+                    <div class="links py-4 my-2">
+                        {% for page in pages %}
+
+                        <a class="{% if page.slug == active_slug %}active{% endif %}" href="{% url 'page:corporate' page.slug %}">{{ page.title }}</a>
+
+                        {% endfor %}
+                        <!--
+                        <a class="active"  href="kurumsal.hmtl">Hakkımızda</a>
+                        <a href="kurumsal.html">Tarihçe</a>
+                        -->
+                    </div>
+                </div>
+            </div>
+            <div class="explain px-1" data-aos="zoom-in">
+                <p>
+                    {% for page in pages %}
+                    {% if page.slug == active_slug %}
+                    
+                    {{ page.content }}
+
+                    {% endif %}
+                    {% endfor %}
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% include 'includes/swiper.html' %}
+<div class="btn mt-5" data-aos="zoom-in">
+    <a href="{% url 'page:products' %}" class="btn-hover color">Tüm Ürünlerimizi Görün!</a>
+</div>
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+<!-- {% include 'TEMPLATE_FOOTER.html' %} --> 
+

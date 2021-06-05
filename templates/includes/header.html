@@ -1,0 +1,78 @@
+{% load static %}
+<header class="header">
+    <div class="header-up">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-0 social-icons">
+                    <ul>
+                        <li><a title="Instagram" href="{{ site_settings.firma_telefonu }}"><i class="fa fa-instagram"></i></a></li>
+                        <li><a title="Twitter" href="{{ site_settings.firma_telefonu }}"><i class="fa fa-twitter"></i></a></li>
+                        <li><a title="Facebook" href="{{ site_settings.firma_telefonu }}"><i class="fa fa-facebook-f"></i></a></li>
+                        <li><a title="Linkedin" href="{{ site_settings.firma_telefonu }}"><i class="fab fa-linkedin-in"></i></a></li>
+                    </ul>
+                </div>
+                <div class="col-md-6 col-12 contact-links">
+                    <ul>
+                        <li><a href="tel:{{ site_settings.firma_telefonu }}"><i class="fa fa-phone"></i> {{ site_settings.firma_telefonu }}</a></li>
+                        <li><a href="mailto:{{ site_settings.firma_telefonu }}"><i class="fa fa-envelope"></i> {{ site_settings.firma_telefonu }}</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-down">
+        <div class="container">
+            <div class="row">
+                {% include 'includes/sidebar.html' %}
+                <div class="col-lg-2 col-md-3 col-12 logo-col">
+                    <div class="logo">
+                        <a href="{% url 'index' %}">
+                            <img src="{% static 'images/logo.png' %}" alt="yüklenemedi..">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-10 col-md-9 col-0 nav-col">
+                    <div class="nav-links">
+                        <ul>
+                            <li><a href="{% url 'index' %}">Ana Sayfa</a></li>
+                            <li>
+                                <span>Kurumsal <i class="fa fa-caret-down"></i></span>
+                                
+                                <ul class="dropdown-menu">
+                                    
+                                    
+                                    {% for page in pages %}    
+                                    <li><a href="{% url 'page:corporate' page.slug %}">{{ page.title }}</a></li>
+                                    {% endfor %}
+                                    
+                                </ul>
+                                
+                
+                                
+                           
+                            </li>
+                            <li>
+                                <span>Ürünlerimiz <i class="fa fa-caret-down"></i></span>
+                                <ul class="dropdown-menu">
+                                    <li><a href="{% url 'page:products' %}">Tüm Ürünler</a></li>
+                                    {% if categories %}
+                                    {% for category in categories %}
+                                    <li><a href="{% url 'page:filter_category' category.slug %}">{{ category.categorie_name }}</a></li>
+                                    {% endfor %}
+                                    {% endif %}
+                                </ul>
+                            </li>
+                            <li><a href="{% url 'index' %}#biz-kimiz">Biz Kimiz?</a></li>
+                            <li><a href="{% url 'index' %}#neden-biz">Neden Biz?</a></li>
+                            <li><a href="{% url 'index' %}#neler-yapiyoruz">Neler Yapıyoruz?</a></li>
+                            <li><a href="{% url 'page:contact' %}">İletişim</a></li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<div class="header-fixed"></div>

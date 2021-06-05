@@ -1,0 +1,36 @@
+<div data-aos="zoom-in" class="section">
+    <center>
+        <div class="container">
+            <div class="row">
+                <div class="col-12 px-1">
+                    <div class="head">
+                        <h1 data-value="Ürünlerimiz">Ürünlerimiz</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    {% for product in products %}
+                    <div class="swiper-slide">
+                        <a href="{% url 'page:details' product.slug %}">
+                            <img src="{{ product.cover_image.url }}" alt="">
+                        </a>
+                    </div>
+                    {% endfor %}
+                    
+                </div>
+            </div>
+            <!-- Add Arrows -->
+            <div class="arrows-area">
+                <div class="swiper-arrows">
+                    <div class="swiper-button-next "></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+            </div>
+        </div>
+    </center>
+</div>
+
+

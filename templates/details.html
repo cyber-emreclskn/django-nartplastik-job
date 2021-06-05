@@ -1,0 +1,81 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<div class="details">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-12">
+                <div class="gallery">
+                    
+                    <div class="gallery-item">
+                        <input type="radio" checked id="product-first-image" name="gallery" class="gallery-selector"/>
+                        <img class="gallery-img" src="{{ product.cover_image.url }}" width="600" height="400" alt=""/>
+                        <label for="product-first-image" class="gallery-thumb"><img src="{{ product.cover_image.url }}" width="150" height="100" alt=""/></label>
+                    </div>
+                    
+
+                    {% if product_images is None %}
+                    {% for images in product_images_urls %}
+                    <div class="gallery-item">
+                        <input type="radio"  id="{{forloop.counter}}" name="gallery" class="gallery-selector"/>
+                        <img class="gallery-img" src="{{ images }}" width="600" height="400" alt=""/>
+                        <label for="{{forloop.counter}}" class="gallery-thumb"><img src="{{ images }}" width="150" height="100" alt=""/></label>
+                    </div>
+                    {% endfor %}
+                    {% endif %}
+                    
+        
+                </div>
+                
+            </div>
+            <div class="col-md-6 col-12">
+                <div class="product-exp">
+                    <h1 class="title">{{ product.product_name }}</h1>
+                    <p><b class="bold cat">Ürün kategorisi:</b> {{ product.product_categories }}</p>
+                    <p>
+                        <b class="bold exp">Ürün Açıklaması:</b>
+                        {{ product.product_desc }}
+                    </p>
+                </div>
+                <div class="btn" data-aos="zoom-in">
+                    <a href="{% url 'page:filter_category' category_slug.slug %}" class="btn-hover color">Tüm Benzer Ürünleri Gör</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="products">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section mt-4">
+                        <div class="head">
+                            <h1 data-value="Benzer Ürünler?">Benzer Ürünler?</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+
+                {% for p in products %}
+                {% if p.product_categories == product.product_categories %}
+                {% if p.id != product.id %}
+                <div class="col-md-3 col-sm-6 col-12" data-aos="zoom-in">
+                    <div class="product-card">
+                        <a href="{% url 'page:details' p.slug  %}">
+                            <img src="{{ p.cover_image.url }}" alt="yüklenemedi..">
+                            <h3>{{ p.product_name }}</h3>
+                            <p>{{ p.product_categories }}</p>
+                        </a>
+                    </div>
+                </div>
+                {% endif %}
+                {% endif %}
+                {% endfor %}
+                
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+

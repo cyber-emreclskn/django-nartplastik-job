@@ -1,0 +1,77 @@
+<div class="top-border mt-5"></div>
+<div class="footer-area">
+    <div class="container">
+        <div class="row mt-1 mb-4">
+            <div class="col-md-4 col-12 my-2">
+                <div class="link" data-aos="zoom-in">
+                    <a
+                        href="{{ site_settings.firma_harita_kodu }}">
+                        <i class="fa fa-map-marker"></i> Adres
+                        <p class="text-small m-0">{{ site_settings.firma_kisa_adres }}</p>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-4 col-12 my-2">
+                <div class="link" data-aos="zoom-in">
+                    <a href="tel:{{ site_settings.firma_telefonu }}">
+                        <i class="fa fa-phone-alt"></i> Bizi Arayın
+                        <p class="text-small m-0">{{ site_settings.firma_telefonu }}</p>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-4 col-12 my-2">
+                <div class="link" data-aos="zoom-in">
+                    <a href="mailto:{{ site_settings.firma_mail_adres }}">
+                        <i class="fa fa-envelope"></i> Bize Ulaşın
+                        <p class="text-small m-0">{{ site_settings.firma_mail_adres }}</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="row px-4">
+            <div class="col-md-3 col-sm-6 col-12">
+                <h2><i class="fas fa-book-open"></i> Kurumsal</h2>
+                <ul>
+                    {% for page in pages %}
+                    <li><a href="{% url 'page:corporate' page.slug %}">{{ page.title }}</a></li>
+                    {% endfor %}
+
+                </ul>
+            </div>
+            <div class="col-md-3 col-sm-6 col-12">
+                <h2><i class="fab fa-buffer"></i> Ürünler</h2>
+                <ul>
+
+                    {% for p in footer_p %}
+                    <li><a href="{% url 'page:details' p.slug %}">{{ p.product_name }}</a></li>
+                    {% endfor %}
+                
+                </ul>
+            </div>
+            <div class="col-md-3 col-sm-6 col-12">
+                <h2><i class="fa fa-hashtag"></i> Kategoriler</h2>
+                <ul>
+                    {% for c in footer_c %}
+                    <li><a href="{% url 'page:filter_category' c.slug %}">{{ c.categorie_name }}</a></li>
+                    {% endfor %}
+                    
+                </ul>
+            </div>
+            <div class="col-md-3 col-sm-6 col-12">
+                <h2><i class="fa fa-link"></i> Medya</h2>
+                <ul>
+                    <li><a href="{{ site_settings.instagram_hesabi }}">İnstagram</a></li>
+                    <li><a href="{{ site_settings.twitter_hesabi }}">Twitter</a></li>
+                    <li><a href="{{ site_settings.linkedin_hesabi }}">Linkedin</a></li>
+                    <li><a href="{{ site_settings.facebook_hesabi }}">Facebook</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="line"></div>
+        <div class="term m-0">
+            <p class="m-0 text-small"><i class="fa fa-copyright"></i> 2021 | Tüm Hakları Saklıdır | <i>Nart Ambalaj</i>
+            </p>
+            <p class="m-0 text-small"><a href="">Yasin Akbulut</a> & <a href="">Emre Çalışkan</a></p>
+        </div>
+    </div>
+</div>

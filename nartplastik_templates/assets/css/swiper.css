@@ -1,0 +1,88 @@
+.swiper-container{
+    position: relative;
+    width: 100%;
+    margin:  0;
+    z-index: -1;
+    height: 17rem;
+    top:0;
+    padding: 0;
+}
+.swiper-wrapper{
+    align-items: center;
+}
+.swiper-slide{
+    border-radius: 7px;
+    transition: .4s;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    width: 270px;
+    height: 270px;
+}
+.swiper-slide img{
+    cursor: pointer;
+    width: 270px;
+    height: 270px;
+    object-fit: cover;
+    transition: .4s;
+    border-radius: 15px;
+}
+.arrows-area{
+    position: relative;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.swiper-arrows{
+    position: relative;
+    top:1.7rem;
+    margin-bottom: 1rem;
+    width: 100px;
+}
+.swiper-button-next:after,
+.swiper-button-prev:after{
+    display: none;
+}
+.swiper-button-next:before{
+    content: "\f061";
+    font-family: FontAwesome;
+    display: block;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    font-size: 1.2rem;
+}
+.swiper-button-prev:before{
+    content: "\f060";
+    font-family: FontAwesome;
+    display: block;
+    padding: 0;
+    margin: 0;
+    color: #fff;
+    font-size: 1.2rem;
+}
+.swiper-button-next,
+.swiper-button-prev{
+    padding: 0 1.2rem;
+    border-radius: .3rem;
+    background-image: linear-gradient(to right, #667eea, #a459dc);
+    box-shadow: 0 0 8px 0 rgba(102, 126, 228, 0.75);
+    background-size: 150% 120%;
+    transition: all .2s;
+}
+.swiper-button-next:hover,
+.swiper-button-prev:hover{
+    background-size: 100% 50%;
+}
+.swiper-button-next{
+    margin-right: -.5rem;
+}
+.swiper-button-prev{
+    margin-left: -.5rem;
+}
+.swiper-button-next:active,
+.swiper-button-prev:active{
+    transform: scale(.85);
+}

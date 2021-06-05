@@ -1,0 +1,56 @@
+.contact .contact-area{
+    background: #fff;
+    box-shadow: var(--box-shadow);
+    border-radius: .5rem;
+    padding: 0;
+}
+.map,.map iframe{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: .5rem;
+}
+.contact .form-area{
+    position: relative;
+    width: 100% ;
+    padding: 2rem;
+}
+.form .inputBox{
+    position: relative;
+    display: block;
+    margin: 1rem 0;
+}
+.form .inputBox label{
+    display: block;
+    color:var(--text-color);
+    font-size: var(--normal-font-size);
+    font-weight: 500;
+    margin-left: .2rem;
+}
+.form .inputBox label:before{
+    content: "\f1d8";
+    font-family: FontAwesome;
+    color: #667eea;
+    padding-right: .3rem;
+    font-size: var(--normal-font-size);
+}
+.form .inputBox input,
+.form .inputBox textarea{
+    position: relative;
+    display: block;
+    width: 100%;
+    padding: .5rem 1rem;
+    border:2px solid #e1e1e1;
+    outline: none;
+    border-radius: .5rem;
+    transition: all .2s;
+    font-size: var(--normal-font-size);
+    color: var(--text-color);
+}
+.form .inputBox input::placeholder,
+.form .inputBox textarea::placeholder{
+    color: var(--text-color-light);
+}
+.form .inputBox input:focus{
+    border-color: #667eea;
+}

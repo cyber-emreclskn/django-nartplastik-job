@@ -1,0 +1,53 @@
+<div class="sidebar-area">
+    <input type="checkbox" id="check">
+    <label class="menu-icons" for="check">
+        <i class="fas fa-bars" id="menu"></i>
+        <i class="fas fa-times" id="close"></i>
+    </label>
+
+    <div class="sidebar">
+        <header> Nart Ambalaj</header>
+
+        <div class="sidebar-menu">
+            <ul>
+                <li><a class="active" href="{% url 'index' %}"><i class="fas fa-home"></i>Ana Sayfa</a></li>
+
+                <li>
+                    <input type="checkbox" id="kurumsal">
+                    <label class="dropdown-label" for="kurumsal">
+                        <i class="fas fa-quote-left"></i> Kurumsal <i id="label-icon" class="fas fa-chevron-down"></i>
+                    </label>
+                    <ul class="dropdown-list">
+                                    
+                                    
+                        {% for page in pages %}    
+                        <li><a href="{% url 'page:corporate' page.slug %}">{{ page.title }}</a></li>
+                        {% endfor %}
+                        
+                    </ul>
+                    
+                </li>
+
+                <li>
+                    <input type="checkbox" id="urunlerimiz">
+                    <label class="dropdown-label" for="urunlerimiz">
+                        <i class="fab fa-buffer"></i> Ürünlerimiz <i id="label-icon" class="fas fa-chevron-down"></i>
+                    </label>
+                    <ul class="dropdown-list">
+                        <li><a href="{% url 'page:products' %}">Tüm Ürünler</a></li>
+                        {% if categories %}
+                        {% for category in categories %}
+                        <li><a href="{% url 'page:filter_category' category.slug %}">{{ category.categorie_name }}</a></li>
+                        {% endfor %}
+                        {% endif %}
+                    </ul>
+                </li>
+
+                <li><a href="{% url 'index' %}#neden-biz">Neden Biz?</a></li>
+                <li><a href="{% url 'index' %}#neler-yapiyoruz">Neler Yapıyoruz?</a></li>
+                <li><a href="{% url 'index' %}#iletisim">İletişim</a></li>
+
+            </ul>
+        </div>
+    </div>
+</div>

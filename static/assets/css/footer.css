@@ -1,0 +1,114 @@
+.footer-area{
+    position: relative;
+    width: 100%;
+    bottom:0;
+    margin: 0;
+    padding:1.5rem 0;
+    background: #f8f8ff;
+    overflow: hidden;
+}
+.top-border{
+    width: 100%;
+    height: 2px;
+    background-image: linear-gradient(to right, #667eea, #a459dc, #6B8DD6, #a33aef);
+}
+.footer-area:before{
+    content: "";
+    position: absolute;
+    width: 1.75rem;
+    height: 1.75rem;
+    left: 50%;
+    transform: rotate(45deg);
+    background-image: linear-gradient(to right, #667eea, #a459dc);
+    z-index: 9;
+    top:-1rem;
+}
+.link{
+    position: relative;
+    width: 100%;
+    text-align: center;
+}
+.link a{
+    position: relative;
+    width: 100%;
+    display: inline-block;
+    padding: 1rem 2rem;
+    background: #fff;
+    box-shadow: var(--box-shadow);
+    color:var(--text-color);
+    font-size: var(--h3-font-size);
+    border-radius: .5rem;
+    font-weight: 500;
+    transition: all .2s;
+}
+.link a i{
+    color: var(--blue-color-alt);
+    padding: 0 .2rem;
+}
+.link a p{
+    color: var(--text-color-light);
+}
+.link a:hover{
+    text-decoration: none;
+    background: #667eea;
+    color:#fff;
+    box-shadow: 0 4px 15px 0 rgba(102, 126, 228, 0.75);
+}
+.link a:hover i,
+.link a:hover p{
+    color:#fff;
+}
+
+
+.footer-area h2{
+    font-size: var(--h3-font-size);
+    color: var(--text-color);
+}
+.footer-area h2 i{
+    color:transparent;
+    -webkit-text-stroke: 1px var(--blue-color-alt);
+    font-size: var(--h2-font-size);
+}
+.footer-area ul li a:before{
+    content: "\f178";
+    font-family: FontAwesome;
+    color: var(--blue-color-alt);
+    font-size: var(--small-font-size);
+    padding-right: .25rem;
+    margin-left: -.9rem;
+    opacity: 0;
+    transition: all .2s;
+}
+.footer-area ul li a:hover:before{
+    opacity: 1;
+    margin-left: 0;
+}
+.footer-area ul li a{
+    width: 100%;
+    color: var(--text-color-light);
+    font-size: var(--small-font-size);
+    transition: all .2s;
+}
+.footer-area ul li a:hover{
+    text-decoration: none;
+    color: var(--text-color);
+}
+.line{
+    width: 100%;
+    height: 2px;
+    background: #EDF1FD ;
+    margin-bottom: 1rem;
+}
+.term{
+    text-align: center;
+    width: 100%;
+    color: var(--text-color-light);
+    font-size: var(--small-font-size);
+}
+.term a{
+    color: var(--text-color-light);
+    font-size: var(--smaller-font-size);
+}
+.term a:hover{
+    color: var(--text-color);
+}

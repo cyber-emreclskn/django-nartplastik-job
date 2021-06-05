@@ -1,0 +1,199 @@
+.products{
+    position: relative;
+    width: 100%;
+    padding: 0 .15rem;
+}
+.products-categories{
+    padding: 0;
+}
+.products-categories input[type=checkbox]{
+    display: none;
+}
+.products-categories label{
+    width: 100%;
+    text-align: left;
+    font-size: var(--h2-font-size);
+    color: var(--text-color);
+    font-weight: 500;
+    margin: 0 0 .8rem 0;
+}
+.products-categories label i{
+    color: #667eea;
+    font-size: var(--h2-font-size);
+}
+.products-categories .dropdown-list li{
+    position: relative;
+    width: 90%;
+    margin: 0 0 .7rem 0;
+}
+.products-categories .dropdown-list li a{
+    width: 100%;
+    display: block;
+    padding: .5rem 1rem;
+    border-radius: .5rem;
+    background: #fff;
+    box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.135);
+    transition: all .2s;
+    color: var(--text-color);
+    font-size: var(--small-font-size);
+}
+.products-categories .dropdown-list li a:before{
+    content: "\f178";
+    font-family: FontAwesome;
+    padding-right: .3rem;
+    color:#fff;
+    margin-left: -1.2rem;
+    transition: all .2s;
+    opacity: 0;
+}
+.products-categories .dropdown-list li a:hover,
+.products-categories .dropdown-list li a.active{
+    text-decoration: none;
+    background: #667eea;
+    box-shadow: 0 3px 5px 0 rgba(102, 126, 228, 0.75);
+    color:#fff;
+}
+.products-categories .dropdown-list li a:hover:before,
+.products-categories .dropdown-list li a.active:before{
+    margin-left: 0;
+    opacity: 1;
+}
+.products-categories .dropdown-list li a span{
+    float: right;
+    color:var(--text-color-light)
+}
+.products-categories .dropdown-list li a:hover span,
+.products-categories .dropdown-list li a.active span{
+    color:#fff;
+}
+
+
+.product-card{
+    position: relative;
+    width: 100%;
+    background: #fff;
+    box-shadow: var(--box-shadow);
+    border-radius: .5rem;
+    overflow: hidden;
+    display: inline-block;
+    text-align: center;
+    margin-bottom: 1rem;
+    transition: all .2s;
+}
+.product-card:active{
+    transform: scale(.9);
+}
+.product-card a{
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    transition: all .2s;
+}
+.product-card img{
+    width: 100%;
+    min-height: 15rem;
+    max-height: 20rem;
+    object-fit: cover;
+    border-radius: .5rem;
+}
+.product-card h3{
+    margin-top: .5rem;
+    font-size: var(--h3-font-size);
+    color: var(--text-color);
+    padding: 0 .5rem;
+}
+.product-card p{
+    display: inline-block;
+    font-size: var(--smaller-font-size);
+    padding: .2rem .7rem;
+    border-radius: .3rem;
+    color: #fff;
+    background: #667eea;
+}
+.product-card a:hover{
+    text-decoration: none;
+}
+.product-card a::before{
+    position: absolute;
+    top: 0;
+    left: -85%;
+    z-index: 2;
+    content: '';
+    width: 50%;
+    height: 100%;
+    background: -webkit-linear-gradient(left, rgba(255,255,255,0) 0%, rgba(255,255,255,.3) 100%);
+    background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,.3) 100%);
+    -webkit-transform: skewX(-25deg);
+    transform: skewX(-25deg);
+}
+.product-card a:hover::before {
+    -webkit-animation: shine .75s;
+    animation: shine .75s;
+}
+@-webkit-keyframes shine {
+    100% {
+        left: 125%;
+    }
+}
+@keyframes shine {
+    100% {
+        left: 125%;
+    }
+}
+@media screen and (max-width: 991px) {
+    .products-categories label{
+        position: relative;
+        width: 100%;
+        text-align: center;
+        padding: .5rem 0;
+        border-radius: .5rem;
+        box-shadow: var(--box-shadow);
+        transition: all .2s;
+        cursor: pointer;
+    }
+    .products-categories label:after{
+        content: "e Göre Listele";
+    }
+    .products-categories label:before {
+        content: "\f175";
+        font-family: FontAwesome;
+        float: right;
+        color:#667eea;
+        margin-right: 1rem;
+    }
+    .products-categories label:hover,
+    .products-categories input[type=checkbox]:checked ~ label{
+        background: #667eea;
+        color:#fff;
+    }
+    .products-categories input[type=checkbox]:checked ~ label i,
+    .products-categories label:hover i,
+    .products-categories input[type=checkbox]:checked ~ label:before,
+    .products-categories label:hover:before{
+        color:#fff;
+    }
+    .products-categories .dropdown-list{
+        display: none;
+    }
+    .products-categories input[type=checkbox]:checked ~ .dropdown-list{
+        display: block;
+    }
+    .products-categories .dropdown-list{
+        background: #fff;
+        box-shadow: var(--box-shadow);
+        padding: 1rem .7rem;
+        border-radius: .5rem;
+        height: 20rem;
+        overflow-y: auto;
+    }
+    .products-categories .dropdown-list::-webkit-scrollbar,
+    .products-categories .dropdown-list::-webkit-scrollbar-track,
+    .products-categories .dropdown-list::-webkit-scrollbar-thumb{
+        width:0;
+        box-shadow: none;
+        background:  transparent;
+    }
+    .products-categories .dropdown-list li{
+        width: 100%;
+    }
+}
