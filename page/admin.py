@@ -121,6 +121,7 @@ class SiteSettingsAdmin(admin.ModelAdmin):
             'fields' : (
                 'site_ismi',
                 'site_keywords',
+                'site_aciklama',
                 'smtp_port',
                 'smtp_mail_server',
                 'smtp_mail_name',
@@ -129,14 +130,14 @@ class SiteSettingsAdmin(admin.ModelAdmin):
                 'google_adsense',
                 'firma_harita_kodu',
                 'firma_telefonu',
-                'firma_mail_adres'
+                'firma_mail_adres',
+                'firma_harita_link',
             ),
             'description' : 'Site İçin Gerekli Ayarlar',
         }),
         ('Opsiyonel Ayarlar',{
             'fields': (
                 'firma_kisa_adres',
-                'site_aciklama',
                 'instagram_hesabi',
                 'twitter_hesabi',
                 'facebook_hesabi',

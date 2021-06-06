@@ -48,14 +48,20 @@
             <div class="row">
                 <div class="col-12">
                     <div class="section mt-4">
+                        {% if products %}
                         <div class="head">
                             <h1 data-value="Benzer Ürünler?">Benzer Ürünler?</h1>
                         </div>
+                        {% else %}
+                        <div class="head">
+                            <h1 data-value="Benzer Ürünler?">Benzer Ürünümüz Yok</h1>
+                        </div>
+                        {% endif %}
                     </div>
                 </div>
             </div>
             <div class="row">
-
+                {% if products %}
                 {% for p in products %}
                 {% if p.product_categories == product.product_categories %}
                 {% if p.id != product.id %}
@@ -71,6 +77,7 @@
                 {% endif %}
                 {% endif %}
                 {% endfor %}
+                {% endif %}
                 
             </div>
         </div>

@@ -1,3 +1,4 @@
+const fixed = document.querySelector(".header-fixed");
 const up = document.querySelector(".header-up");
 const down = document.querySelector(".header-down");
 const html = document.querySelector("html");

@@ -5,16 +5,20 @@
             <div class="row">
                 <div class="col-md-6 col-0 social-icons">
                     <ul>
-                        <li><a title="Instagram" href="{{ site_settings.firma_telefonu }}"><i class="fa fa-instagram"></i></a></li>
-                        <li><a title="Twitter" href="{{ site_settings.firma_telefonu }}"><i class="fa fa-twitter"></i></a></li>
-                        <li><a title="Facebook" href="{{ site_settings.firma_telefonu }}"><i class="fa fa-facebook-f"></i></a></li>
-                        <li><a title="Linkedin" href="{{ site_settings.firma_telefonu }}"><i class="fab fa-linkedin-in"></i></a></li>
+                        {% if site_settings %}
+                        <li><a title="Instagram" href="{{ site_settings.instagram_hesabi }}"><i class="fa fa-instagram"></i></a></li>
+                        <li><a title="Twitter" href="{{ site_settings.twitter_hesabi }}"><i class="fa fa-twitter"></i></a></li>
+                        <li><a title="Facebook" href="{{ site_settings.facebook_hesabi }}"><i class="fa fa-facebook-f"></i></a></li>
+                        <li><a title="Linkedin" href="{{ site_settings.linkedin_hesabi }}"><i class="fab fa-linkedin-in"></i></a></li>
+                        {% endif %}
                     </ul>
                 </div>
                 <div class="col-md-6 col-12 contact-links">
                     <ul>
+                        {% if site_settings %}
                         <li><a href="tel:{{ site_settings.firma_telefonu }}"><i class="fa fa-phone"></i> {{ site_settings.firma_telefonu }}</a></li>
-                        <li><a href="mailto:{{ site_settings.firma_telefonu }}"><i class="fa fa-envelope"></i> {{ site_settings.firma_telefonu }}</a></li>
+                        <li><a href="mailto:{{ site_settings.mail_adresi }}"><i class="fa fa-envelope"></i> {{ site_settings.mail_adresi }}</a></li>
+                        {% endif %}
                     </ul>
                 </div>
             </div>
@@ -38,19 +42,19 @@
                             <li><a href="{% url 'index' %}">Ana Sayfa</a></li>
                             <li>
                                 <span>Kurumsal <i class="fa fa-caret-down"></i></span>
-                                
+
                                 <ul class="dropdown-menu">
-                                    
-                                    
-                                    {% for page in pages %}    
+
+                                    {% if pages %}
+                                    {% for page in pages %}
                                     <li><a href="{% url 'page:corporate' page.slug %}">{{ page.title }}</a></li>
                                     {% endfor %}
-                                    
+                                    {% endif %}
                                 </ul>
-                                
-                
-                                
-                           
+
+
+
+
                             </li>
                             <li>
                                 <span>Ürünlerimiz <i class="fa fa-caret-down"></i></span>

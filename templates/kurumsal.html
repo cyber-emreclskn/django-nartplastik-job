@@ -1,5 +1,5 @@
 {% extends 'layout.html' %}
-<!-- {% include 'TEMPLATE.html' %} --> 
+
 {% block body %}
 <div class="corporate my-4">
     <div class="container">
@@ -33,7 +33,7 @@
                 <p>
                     {% for page in pages %}
                     {% if page.slug == active_slug %}
-                    
+
                     {{ page.content }}
 
                     {% endif %}
@@ -61,5 +61,4 @@
 
 
 
-<!-- {% include 'TEMPLATE_FOOTER.html' %} --> 
 

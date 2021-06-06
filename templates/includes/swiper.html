@@ -12,6 +12,7 @@
         <div class="container">
             <div class="swiper-container">
                 <div class="swiper-wrapper">
+                    {% if products %}
                     {% for product in products %}
                     <div class="swiper-slide">
                         <a href="{% url 'page:details' product.slug %}">
@@ -19,7 +20,7 @@
                         </a>
                     </div>
                     {% endfor %}
-                    
+                    {% endif %}
                 </div>
             </div>
             <!-- Add Arrows -->

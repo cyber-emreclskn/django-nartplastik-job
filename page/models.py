@@ -161,33 +161,40 @@ class SiteSettings(models.Model):
         max_length=200,
         null=True,
         blank=True,
+        verbose_name='Site İsmi(Nart Plastik olmalı)'
     )
     firma_mail_adres = models.CharField(
         max_length=200,
         null=True,
         blank=True,
+        verbose_name='Firmanın Mail Adresi'
     )
     firma_telefonu = models.CharField(
         max_length=200,
         null=True,
         blank=True,
+        verbose_name='Firma Telefon Numarası'
     )
     firma_kisa_adres = models.CharField(
         max_length=450,
         null=True,
         blank=True,
+        verbose_name='Firma Kısa Adresi'
     )
     firma_harita_kodu = models.TextField(
         null=True,
         blank=True,
+        verbose_name='Harita Kodu(Google Maps Kodu)'
     )
     site_aciklama = models.TextField(
         null=True,
         blank=True,
+        verbose_name='Site Açıklaması(Site)(Google Kısmı)'
     )
     site_keywords = models.TextField(
         null=True,
         blank=True,
+        verbose_name='Site Anahtar Kelimeleri(Keywords)'
     )
     smtp_mail_server = models.CharField(
         max_length=200,
@@ -212,10 +219,12 @@ class SiteSettings(models.Model):
     google_analytics = models.TextField(
         null=True,
         blank=True,
+        verbose_name='Google Anaylytics Kodu(Burayı Gerekmedikçe Değiştirmeyin)'
     )
     google_adsense = models.TextField(
         null=True,
         blank=True,
+        verbose_name='Google Adsense Kodu(Burayı Gerekmedikçe Değiştirmeyin)'
     )
     instagram_hesabi = models.CharField(
         max_length=200,
@@ -252,6 +261,11 @@ class SiteSettings(models.Model):
        verbose_name='Mail Adresi',
        null=True,
        blank=True, 
+    )
+    firma_harita_link = models.TextField(
+        null=True,
+        blank=True,
+        verbose_name='Firma Harita Link(Burasını Gerekmedikçe Değiştirmeyin)'
     )
 
     class Meta:

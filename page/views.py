@@ -17,6 +17,9 @@ def index(request):
     pages = Page.objects.all()
     productsImages = ProductImages.objects.all()
 
+    page_item = Page.objects.get(title = 'Hakkımızda')
+    context['page_item'] = page_item
+
     footer_product = Product.objects.all()[:5]
     footer_catregories = CategoriesModel.objects.all()[:5]
     context['footer_p'] = footer_product

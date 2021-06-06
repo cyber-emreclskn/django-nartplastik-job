@@ -38,22 +38,29 @@
                             </a>
                         </div>
                     </div>
+                    <div class="container">
                     {% endfor %}
                     {% else %}
                     {% if keyword %}
-                    <div class="row">
-                        <div class="alert alert-danger">
-                            {{ keyword }} aramasına ait ürün bulunamadı
+                    <div class="row px-3">
+                        <div class="col-12">
+                            <div class="alert alert-danger w-100">
+                                <b> {{ keyword }}</b> aramasına ait ürün bulunamadı
+                            </div>
                         </div>
                     </div>
                     {% else %}
-                    <div class="row">
-                        <div class="alert alert-danger">
-                            Henüz Ürün Yok
+                    <div class="row px-3">
+                        <div class="col-12">
+                            <div class="alert alert-danger w-100">
+                                Ürün Bulunamadı!
+                            </div>
                         </div>
                     </div>
                     {% endif %}
                     {% endif %}
+                    </div>
+
 
                     <div class="btn" data-aos="zoom-in">
                         <div class="pagination">

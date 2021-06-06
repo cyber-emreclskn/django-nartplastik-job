@@ -1,18 +1,20 @@
 <section class="slider-area">
     <div class="slider">
+        {% if categories %}
         {% for category in categories %}
         <div class="slide {% if forloop.first  == True %}active{% endif %}" style="background-image: url('{{ category.cover_image.url }}'); object-fit: cover;">
             <div class="slide-container">
                 <div class="caption">
                     <h1>{{ category.categorie_name }}</h1>
-                    
-                    <a href="{% url 'page:filter_category' category.slug %}">Ürünleri Gör <i class="fa fa-long-arrow-right"></i></a>
+
+                    <a href="{% url 'page:filter_category' category.slug %}" class="mt-2">Ürünleri Gör <i class="fa fa-long-arrow-right ml-1"></i></a>
                 </div>
             </div>
         </div>
         {% endfor %}
+        {% endif %}
 
-        
+
 
 
     </div>
