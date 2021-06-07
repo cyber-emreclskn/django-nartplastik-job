@@ -1,6 +1,25 @@
 {% extends 'layout.html' %}
 
 {% block body %}
+
+{% if active_slug %}
+<meta property="og:title" content="{{ active_slug }}">
+<title>{{ active_slug }}</title>
+<meta property="og:url" content="htpps://nartplastik.com/page/kurumsal/{{ active_slug }}">
+{% else %}
+<meta property="og:title" content="Kurumsal">
+<meta property="og:url" content="htpps://nartplastik.com/page/kurumsal/">
+<title>Kurumsal </title>
+{% endif %}
+
+{% for page in pages %}
+{% if page.slug == active_slug %}
+<meta property="og:description" content="{{ page.content }}">
+<meta name="description" content="{{ page.content }}">
+<meta name='keywords' content='{{ site_settings.site_keywords }}'>
+{% endif %}
+{% endfor %}
+
 <div class="corporate my-4">
     <div class="container">
         <div class="image" data-aos="zoom-in">

@@ -2,6 +2,22 @@
 
 
 {% block body %}
+{% if category_slug %}
+<meta property="og:title" content="{{ category_slug }}">
+<title>{{ category_slug }}</title>
+<meta property="og:url" content="htpps://nartplastik.com/page/kategoriler/{{ category_slug }}">
+{% else %}
+<meta property="og:title" content="Tüm Ürünler">
+<meta property="og:url" content="htpps://nartplastik.com/page/urunler">
+<title>Tüm Ürünler</title>
+{% endif %}
+{% if site_settings %}
+<meta property="og:description" content="{{ site_settings.site_aciklama }}">
+<meta name="description" content="{{ site_settings.site_aciklama }}">
+<meta name='keywords' content='{{ site_settings.site_keywords }}'>
+{% endif %}
+
+
 
 <div class="products my-4">
     <div class="container">

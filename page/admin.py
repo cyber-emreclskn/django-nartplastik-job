@@ -128,10 +128,12 @@ class SiteSettingsAdmin(admin.ModelAdmin):
                 'smtp_mail_password',
                 'google_analytics',
                 'google_adsense',
+                'google_search',
                 'firma_harita_kodu',
                 'firma_telefonu',
                 'firma_mail_adres',
                 'firma_harita_link',
+                
             ),
             'description' : 'Site İçin Gerekli Ayarlar',
         }),

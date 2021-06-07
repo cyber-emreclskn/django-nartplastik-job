@@ -3,15 +3,26 @@
 
 
 {% block body %}
+
+<meta property="og:title" content="Nart Plastik ">
+
+{% if site_settings %}
+<meta property="og:description" content="{{ site_settings.site_aciklama }}">
+<meta name="description" content="{{ site_settings.site_aciklama }}">
+<meta name='keywords' content='{{ site_settings.site_keywords }}'>
+{% endif %}
+<meta property="og:url" content="https://nartplastik.com/">
+<title>Nart Plastik </title>
+
 {% include 'includes/slider.html' %}
 {% include 'includes/search-button.html' %}
-
-{% include 'includes/about_us.html' %}
-{% include 'includes/why_us.html' %} 
-{% include 'includes/intro.html' %}
 {% include 'includes/swiper.html' %}
 {% include 'includes/categories.html' %}
-{% include 'includes/whatjob.html' %}
+
+{% include 'includes/intro.html' %}
+
+
+
 
 {% endblock %}
  

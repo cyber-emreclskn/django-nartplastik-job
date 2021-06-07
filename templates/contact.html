@@ -1,6 +1,18 @@
 {% extends 'layout.html' %}
 
 {% block body %}
+
+
+<meta property="og:title" content="İletişim">
+<title>İletişim</title>
+<meta property="og:url" content="htpps://nartplastik.com/page/iletisim">
+
+{% if site_settings %}
+<meta property="og:description" content="{{ site_settings.site_aciklama }}">
+<meta name="description" content="{{ site_settings.site_aciklama }}">
+<meta name='keywords' content='{{ site_settings.site_keywords }}'>
+{% endif %}
+
 <div class="contact mt-3">
     <div class="container p-3">
         <div class="contact-area">

@@ -3,7 +3,28 @@
 <head>
     {% load static %}
     <meta charset="UTF-8">
-    <title>Nart Ambalaj</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf8">
+    <meta name='language' content='TR'>
+    <meta name='robots' content='index,follow'>
+    <meta name='revisit-after' content='7 days'>
+    <meta name="distribution" content="local"/>
+    <meta name='designer' content='Yasin Akbulut & Emre Çalışkan'>
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="tr_TR">
+
+    <meta name='copyright' content='Nart Plastik '>
+    <meta name='reply-to' content='kurumsal@mail.com'>
+    <meta name='author' content='Nart Plastik , kurumsal@mail.com'>
+    <meta property="og:site_name" content="Nart Plastik ">
+
+    {% if site_settings %}
+    {{ site_settings.google_analytics|safe }}
+    {{ site_settings.google_adsense|safe }}
+    {{ site_settings.google_search|safe }}
+    {% endif %}
+
+    
+    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Style Files -->            
     <link rel="stylesheet" href="{% static 'assets/css/custom.css' %}">

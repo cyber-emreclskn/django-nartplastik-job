@@ -1,6 +1,18 @@
 {% extends 'layout.html' %}
 
 {% block body %}
+
+
+<meta property="og:title" content="{{ product.slug }}">
+<title>{{ product.slug }}</title>
+<meta property="og:url" content="htpps://nartplastik.com/page/urun-detay/{{ product.slug }}">
+
+
+<meta property="og:description" content="{{ product.product_desc }}">
+<meta name="description" content="{{ product.product_desc }}">
+<meta name='keywords' content='{{ product.product_name }},{{ site_settings.site_keywords }}'>
+
+
 <div class="details">
     <div class="container">
         <div class="row">

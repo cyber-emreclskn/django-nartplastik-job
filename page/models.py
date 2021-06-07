@@ -226,6 +226,11 @@ class SiteSettings(models.Model):
         blank=True,
         verbose_name='Google Adsense Kodu(Burayı Gerekmedikçe Değiştirmeyin)'
     )
+    google_search = models.TextField(
+        null=True,
+        blank=True,
+        verbose_name='Google Search Kodu(Burayı Gerekmedikçe Değiştirmeyin)'
+    )
     instagram_hesabi = models.CharField(
         max_length=200,
         verbose_name='Instagram Adresi',
